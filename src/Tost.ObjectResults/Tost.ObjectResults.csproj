@@ -4,12 +4,13 @@
     <TargetFramework>net8.0</TargetFramework>
     <ImplicitUsings>enable</ImplicitUsings>
     <Nullable>enable</Nullable>
-    <Title>ObjectResults</Title>
+    <Title>Tost.ObjectResults</Title>
     <IncludeSymbols>True</IncludeSymbols>
     <SymbolPackageFormat>snupkg</SymbolPackageFormat>
     <EnforceCodeStyleInBuild>True</EnforceCodeStyleInBuild>
     <GeneratePackageOnBuild>False</GeneratePackageOnBuild>
 	<NoWarn>CS7035</NoWarn>
+	<Authors>Tost</Authors>
   </PropertyGroup>
 
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
