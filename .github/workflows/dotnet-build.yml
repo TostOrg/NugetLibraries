@@ -31,7 +31,7 @@ jobs:
           dotnet-version: ${{ env.dotnet_version }}
 
       - name: Set Version
-        run: echo "Version=${{ GITHUB_REF#refs/*/ }}" >> $GITHUB_ENV
+        run: echo "Version=${GITHUB_REF#refs/*/}" >> $GITHUB_ENV
 
       - name: Add Github nuget repo
         run: dotnet nuget add source --username ${{ secrets.NUGET_GITHUB_USERNAME }} --password ${{ secrets.GITHUB_TOKEN }} --store-password-in-clear-text --name github "https://nuget.pkg.github.com/TostOrg/index.json"
