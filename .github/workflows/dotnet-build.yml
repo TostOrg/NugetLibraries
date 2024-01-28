@@ -31,7 +31,7 @@ jobs:
           dotnet-version: ${{ env.dotnet_version }}
 
       - name: Set Version
-        run: echo "Version=${GITHUB_REF#refs/*/}" >> $GITHUB_ENV
+        run: echo "Version=${GITHUB_REF#refs/tags/}" >> $GITHUB_ENV
 
       - name: Add Github nuget repo
         run: dotnet nuget add source https://nuget.pkg.github.com/TostOrg/index.json --username ${{ secrets.NUGET_GITHUB_USERNAME }} --password ${{ secrets.GITHUB_TOKEN }} --store-password-in-clear-text --name github
@@ -46,8 +46,8 @@ jobs:
         run: dotnet test --no-build --configuration Release --verbosity normal -p:Version=${{ env.Version }}
 
       - name: Pack
-        run: dotnet pack --no-build --configuration Release --include-symbols --include-source -p:SymbolPackageFormat=${{ env.nuget_format }} -p:Version=${{ env.Version }} -o artifacts
+        run: dotnet pack --no-build --configuration Release --include-symbols --include-source -p:SymbolPackageFormat=${{ env.nuget_format }} -p:Version=${{ env.Version }} -o ./
 
       - name: Push
-        run: dotnet nuget push "artifacts/*.${{ env.nuget_format }}" --source "github" -k ${{ secrets.GITHUB_TOKEN }} --no-service-endpoint
+        run: dotnet nuget push --source "github" -k ${{ secrets.GITHUB_TOKEN }} --no-service-endpoint
           
