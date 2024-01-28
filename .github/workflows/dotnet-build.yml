@@ -48,6 +48,19 @@ jobs:
       - name: Pack
         run: dotnet pack --no-build --configuration Release --include-symbols --include-source -p:SymbolPackageFormat=${{ env.nuget_format }} -p:Version=${{ env.Version }} -o ./
 
-      - name: Push
-        run: dotnet nuget push "./*.${{ env.nuget_format }}" --source "github" -k ${{ secrets.GITHUB_TOKEN }} --no-service-endpoint --skip-duplicate
+      - name: Finding files
+        run: |
+          {
+            echo 'FILELIST<<EOF'
+            find ./ -name '*.md' -print 
+            echo EOF
+          } >> "$GITHUB_ENV"
+      - name: Do something with each file
+        run: |
+          for i in $FILELIST; do
+            echo "dotnet nuget push "${i}" --source "github" -k ${{ secrets.GITHUB_TOKEN }} --no-service-endpoint --skip-duplicate"
+          done  
+
+      #- name: Push
+      #  run: dotnet nuget push "./*.${{ env.nuget_format }}" --source "github" -k ${{ secrets.GITHUB_TOKEN }} --no-service-endpoint --skip-duplicate
           
