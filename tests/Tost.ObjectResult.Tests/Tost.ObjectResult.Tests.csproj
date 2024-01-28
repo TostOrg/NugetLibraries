@@ -21,7 +21,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\..\src\ObjectResults\Tost.ObjectResults.csproj" />
+    <ProjectReference Include="..\..\src\Tost.ObjectResults\Tost.ObjectResults.csproj" />
   </ItemGroup>
 
   <ItemGroup>
