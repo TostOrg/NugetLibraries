@@ -52,7 +52,7 @@ jobs:
         run: |
           {
             echo 'FILELIST<<EOF'
-            find . -name '*.md' -print 
+            find . -name '*.${{ env.nuget_format }}' -print 
             echo EOF
           } >> "$GITHUB_ENV"
       - name: Do something with each file
