@@ -58,7 +58,7 @@ jobs:
       - name: Do something with each file
         run: |
           for i in $FILELIST; do
-            echo "dotnet nuget push "${i}" --source "github" -k ${{ secrets.GITHUB_TOKEN }} --no-service-endpoint --skip-duplicate"
+            dotnet nuget push "${i}" --source "github" -k ${{ secrets.GITHUB_TOKEN }} --no-service-endpoint --skip-duplicate
           done  
 
       #- name: Push
