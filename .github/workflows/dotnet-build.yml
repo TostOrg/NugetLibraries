@@ -56,7 +56,6 @@ jobs:
             echo EOF
           } >> "$GITHUB_ENV"
       - name: Do something with each file
-        shell: bash
         run: |
           for i in $FILELIST; do
             echo "dotnet nuget push ${i} --source github -k ${{ secrets.GITHUB_TOKEN }} --no-service-endpoint --skip-duplicate"
