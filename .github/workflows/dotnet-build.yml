@@ -49,5 +49,5 @@ jobs:
         run: dotnet pack --no-build --configuration Release --include-symbols --include-source -p:SymbolPackageFormat=${{ env.nuget_format }} -p:Version=${{ env.Version }} -o ./
 
       - name: Push
-        run: dotnet nuget push --source "github" -k ${{ secrets.GITHUB_TOKEN }} --no-service-endpoint
+        run: dotnet nuget push ./ --source "github" -k ${{ secrets.GITHUB_TOKEN }} --no-service-endpoint --skip-duplicate
           
