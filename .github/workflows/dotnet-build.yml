@@ -59,7 +59,7 @@ jobs:
         shell: bash
         run: |
           for i in $FILELIST; do
-            dotnet nuget push "${i}" --source "github" -k ${{ secrets.GITHUB_TOKEN }} --no-service-endpoint --skip-duplicate
+            echo dotnet nuget push "${i}" --source "github" -k ${{ secrets.GITHUB_TOKEN }} --no-service-endpoint --skip-duplicate
           done  
 
       #- name: Push
