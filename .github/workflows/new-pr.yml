@@ -13,7 +13,7 @@ jobs:
       contents: write
     uses: TostOrg/DevOpsTemplates/.github/workflows/git-tag.yml@main
     secrets: 
-      AUTH_TOKEN: ${{ GITHUB.GITHUB_TOKEN }}
+      AUTH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
     with:
       ref: ${{ github.event.pull_request.merge_commit_sha }}
       if_check: 'true'
@@ -26,7 +26,7 @@ jobs:
       contents: read
     uses: TostOrg/DevOpsTemplates/.github/workflows/dotnet-build.yml@main
     secrets: 
-      AUTH_TOKEN: ${{ GITHUB.GITHUB_TOKEN }}
+      AUTH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       NUGET_GITHUB_USERNAME: ${{ secrets.NUGET_GITHUB_USERNAME }}
     with:
       ref: ${{ github.sha }}
@@ -39,4 +39,4 @@ jobs:
       contents: read
     uses: TostOrg/DevOpsTemplates/.github/workflows/nuget-pack-push.yml@main
     secrets: 
-      AUTH_TOKEN: ${{ GITHUB.GITHUB_TOKEN }}
+      AUTH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
