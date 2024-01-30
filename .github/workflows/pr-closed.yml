@@ -15,7 +15,7 @@ jobs:
     secrets: 
       AUTH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
     with:
-      ref: ${{ github.sha }}
+      ref: ${{ github.event.pull_request.merge_commit_sha }}
 
   build:
     needs: tag
