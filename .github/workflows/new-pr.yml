@@ -32,10 +32,11 @@ jobs:
       version: ${{ needs.tag.outputs.tag }}
 
   nuget:
-    needs: build
+    needs: [ "tag", "build" ]
     permissions:
       packages: write
       contents: read
     uses: TostOrg/DevOpsTemplates/.github/workflows/nuget-pack-push.yml@main
     secrets: 
       AUTH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      version: ${{ needs.tag.outputs.tag }}
