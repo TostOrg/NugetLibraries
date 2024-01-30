@@ -16,7 +16,6 @@ jobs:
       AUTH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
     with:
       ref: ${{ github.event.pull_request.merge_commit_sha }}
-      if_check: 'true'
       is_prerelease: true
       prerelease_suffix: preview
       

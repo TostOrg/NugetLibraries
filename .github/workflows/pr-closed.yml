@@ -16,7 +16,6 @@ jobs:
       AUTH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
     with:
       ref: ${{ github.sha }}
-      if_check: ${{ github.event.pull_request.merged }}
 
   build:
     needs: tag
