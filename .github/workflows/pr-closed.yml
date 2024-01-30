@@ -1,0 +1,38 @@
+name: Push closed PR to Main
+
+on:
+  workflow_dispatch:
+
+  pull_request:
+    types: [ "closed" ]
+    branches: [ "main" ]
+    
+jobs:
+  tag:
+    permissions:
+      contents: write
+    uses: TostOrg/DevOpsTemplates/templates/jobs/git-tag.yml@main
+    secrets: 
+      GITHUB_TOKEN: ${{ GITHUB.TOKEN }}
+    with:
+      ref: ${{ github.sha }}
+      if_check: ${{ github.event.pull_request.merged }}
+
+  build:
+    permissions:
+      contents: read
+    uses: TostOrg/DevOpsTemplates/templates/jobs/dotnet-build.yml@main
+    secrets: 
+      GITHUB_TOKEN: ${{ GITHUB.GITHUB_TOKEN }}
+      NUGET_GITHUB_USERNAME: ${{ secrets.NUGET_GITHUB_USERNAME }}
+    with:
+      ref: ${{ github.sha }}
+      version: ${{ jobs.tag.outputs.tag }}
+
+  nuget:
+    permissions:
+      packages: write
+      contents: read
+    uses: TostOrg/DevOpsTemplates/templates/jobs/nuget-pack-push.yml@main
+    secrets: 
+      GITHUB_TOKEN: ${{ GITHUB.GITHUB_TOKEN }}
