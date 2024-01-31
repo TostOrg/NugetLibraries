@@ -17,8 +17,6 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution 
 		.github\workflows\new-pr.yml = .github\workflows\new-pr.yml
 	EndProjectSection
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Tost.TestProj", "src\Tost.TestProj\Tost.TestProj.csproj", "{3A78443E-D02D-4F38-B021-F01B246773E6}"
-EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".github", ".github", "{73D07BAC-1D48-409C-9325-CBC4B224BEC3}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "workflows", "workflows", "{AD9FE51D-DFC8-4C6C-962B-4A19A26BB721}"
@@ -41,10 +39,6 @@ Global
 		{50921B63-643B-475F-9DE6-66170DE93805}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{50921B63-643B-475F-9DE6-66170DE93805}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{50921B63-643B-475F-9DE6-66170DE93805}.Release|Any CPU.Build.0 = Release|Any CPU
-		{3A78443E-D02D-4F38-B021-F01B246773E6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{3A78443E-D02D-4F38-B021-F01B246773E6}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{3A78443E-D02D-4F38-B021-F01B246773E6}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{3A78443E-D02D-4F38-B021-F01B246773E6}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -52,7 +46,6 @@ Global
 	GlobalSection(NestedProjects) = preSolution
 		{71E5ACB8-2DF1-41E1-B2FE-8E88D1562697} = {BB2908BA-17FA-45D3-8950-D1768038F3E2}
 		{50921B63-643B-475F-9DE6-66170DE93805} = {69A420E4-98C4-4559-B0F2-F37070978380}
-		{3A78443E-D02D-4F38-B021-F01B246773E6} = {69A420E4-98C4-4559-B0F2-F37070978380}
 		{AD9FE51D-DFC8-4C6C-962B-4A19A26BB721} = {73D07BAC-1D48-409C-9325-CBC4B224BEC3}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
