@@ -1,5 +1,6 @@
 ﻿using System.Text.Json;
 
+using Tost.CollectionsExtensions;
 using Tost.ObjectResults.Interfaces;
 using Tost.ObjectResults.Types;
 
@@ -28,12 +29,16 @@ public static class ErrorBuilder
 
     public static IFailedResult WithError(this IFailedResult result, IError error)
     {
+        ArgumentNullException.ThrowIfNull(result);
+
         result.Reasons.Add(error);
         return result;
     }
 
     public static ProblemDetails ToProblemDetails(this Result result)
     {
+        ArgumentNullException.ThrowIfNull(result);
+
         var detail = (result.Errors.Find(p => p is ReasonResultError) as ReasonResultError)?.Message ?? "Unknown";
         var statusCode = (int)((result.Errors.Find(p => p is HttpStatusCodeResultError) as HttpStatusCodeResultError)?.StatusCode ?? System.Net.HttpStatusCode.BadRequest);
         var title = (result.Errors.Find(p => p is TitleResultError) as TitleResultError)?.Message ?? "Unknown";

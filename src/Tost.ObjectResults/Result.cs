@@ -1,4 +1,10 @@
-﻿using Tost.ObjectResults.Interfaces;
+﻿using Microsoft.VisualBasic;
+
+using System.Collections;
+using System.Collections.ObjectModel;
+
+using Tost.CollectionsExtensions;
+using Tost.ObjectResults.Interfaces;
 
 namespace Tost.ObjectResults;
 
@@ -8,11 +14,11 @@ public class Result : IFailedResult, ISucceededResult
 
     public bool IsSuccess => !IsFailed;
 
-    public List<IReason> Reasons { get; } = [];
+    public Collection<IReason> Reasons { get; } = [];
 
-    public List<IError> Errors => Reasons.FindAll(p => p is IError).ConvertAll(p => (p as IError)!);
+    public Collection<IError> Errors => Reasons.FindAll(p => p is IError).ConvertAll(p => (p as IError)!);
 
-    public List<ISuccess> Successes => Reasons.FindAll(p => p is ISuccess).ConvertAll(p => (p as ISuccess)!);
+    public Collection<ISuccess> Successes => Reasons.FindAll(p => p is ISuccess).ConvertAll(p => (p as ISuccess)!);
 
     public static Result Ok()
     {

@@ -4,16 +4,23 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 VisualStudioVersion = 17.9.34518.117
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "tests", "tests", "{BB2908BA-17FA-45D3-8950-D1768038F3E2}"
+	ProjectSection(SolutionItems) = preProject
+		tests\Directory.build.props = tests\Directory.build.props
+	EndProjectSection
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Tost.ObjectResult.Tests", "tests\Tost.ObjectResult.Tests\Tost.ObjectResult.Tests.csproj", "{71E5ACB8-2DF1-41E1-B2FE-8E88D1562697}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{69A420E4-98C4-4559-B0F2-F37070978380}"
+	ProjectSection(SolutionItems) = preProject
+		src\Directory.build.props = src\Directory.build.props
+	EndProjectSection
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Tost.ObjectResults", "src\Tost.ObjectResults\Tost.ObjectResults.csproj", "{50921B63-643B-475F-9DE6-66170DE93805}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{BB9F4CA0-EB02-4F3B-811A-429EFAA6B715}"
 	ProjectSection(SolutionItems) = preProject
 		.editorconfig = .editorconfig
+		Directory.build.props = Directory.build.props
 		.github\workflows\new-pr.yml = .github\workflows\new-pr.yml
 	EndProjectSection
 EndProject
@@ -24,6 +31,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "workflows", "workflows", "{
 		.github\workflows\new-pr.yml = .github\workflows\new-pr.yml
 		.github\workflows\pr-closed.yml = .github\workflows\pr-closed.yml
 	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Tost.CollectionsExtensions", "Tosts.CollectionsExtensions\Tost.CollectionsExtensions.csproj", "{79005186-B7F6-42B8-BEF4-46A292CB7AAF}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -39,6 +48,10 @@ Global
 		{50921B63-643B-475F-9DE6-66170DE93805}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{50921B63-643B-475F-9DE6-66170DE93805}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{50921B63-643B-475F-9DE6-66170DE93805}.Release|Any CPU.Build.0 = Release|Any CPU
+		{79005186-B7F6-42B8-BEF4-46A292CB7AAF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{79005186-B7F6-42B8-BEF4-46A292CB7AAF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{79005186-B7F6-42B8-BEF4-46A292CB7AAF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{79005186-B7F6-42B8-BEF4-46A292CB7AAF}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -47,6 +60,7 @@ Global
 		{71E5ACB8-2DF1-41E1-B2FE-8E88D1562697} = {BB2908BA-17FA-45D3-8950-D1768038F3E2}
 		{50921B63-643B-475F-9DE6-66170DE93805} = {69A420E4-98C4-4559-B0F2-F37070978380}
 		{AD9FE51D-DFC8-4C6C-962B-4A19A26BB721} = {73D07BAC-1D48-409C-9325-CBC4B224BEC3}
+		{79005186-B7F6-42B8-BEF4-46A292CB7AAF} = {69A420E4-98C4-4559-B0F2-F37070978380}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {81255195-DFE9-4521-94D3-4831D5593987}

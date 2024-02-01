@@ -1,9 +1,11 @@
-﻿namespace Tost.ObjectResults.Interfaces;
+﻿using System.Collections.ObjectModel;
+
+namespace Tost.ObjectResults.Interfaces;
 
 public interface ISucceededResult
 {
-    public List<IReason> Reasons { get; }
-    public List<ISuccess> Successes { get; }
+    public Collection<IReason> Reasons { get; }
+    public Collection<ISuccess> Successes { get; }
 }
 
 public interface ISucceededResult<T> : ISucceededResult

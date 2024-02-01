@@ -1,7 +1,9 @@
-﻿namespace Tost.ObjectResults.Interfaces;
+﻿using System.Collections.ObjectModel;
+
+namespace Tost.ObjectResults.Interfaces;
 
 public interface IFailedResult
 {
-    public List<IReason> Reasons { get; }
-    public List<IError> Errors { get; }
+    public Collection<IReason> Reasons { get; }
+    public Collection<IError> Errors { get; }
 }
