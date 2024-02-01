@@ -5,14 +5,14 @@ VisualStudioVersion = 17.9.34518.117
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "tests", "tests", "{BB2908BA-17FA-45D3-8950-D1768038F3E2}"
 	ProjectSection(SolutionItems) = preProject
-		tests\Directory.build.props = tests\Directory.build.props
+		tests\Directory.Build.props = tests\Directory.Build.props
 	EndProjectSection
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Tost.ObjectResult.Tests", "tests\Tost.ObjectResult.Tests\Tost.ObjectResult.Tests.csproj", "{71E5ACB8-2DF1-41E1-B2FE-8E88D1562697}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{69A420E4-98C4-4559-B0F2-F37070978380}"
 	ProjectSection(SolutionItems) = preProject
-		src\Directory.build.props = src\Directory.build.props
+		src\Directory.Build.props = src\Directory.Build.props
 	EndProjectSection
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Tost.ObjectResults", "src\Tost.ObjectResults\Tost.ObjectResults.csproj", "{50921B63-643B-475F-9DE6-66170DE93805}"
@@ -20,7 +20,7 @@ EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{BB9F4CA0-EB02-4F3B-811A-429EFAA6B715}"
 	ProjectSection(SolutionItems) = preProject
 		.editorconfig = .editorconfig
-		Directory.build.props = Directory.build.props
+		Directory.Build.props = Directory.Build.props
 		.github\workflows\new-pr.yml = .github\workflows\new-pr.yml
 	EndProjectSection
 EndProject
@@ -32,7 +32,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "workflows", "workflows", "{
 		.github\workflows\pr-closed.yml = .github\workflows\pr-closed.yml
 	EndProjectSection
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Tost.CollectionsExtensions", "Tosts.CollectionsExtensions\Tost.CollectionsExtensions.csproj", "{79005186-B7F6-42B8-BEF4-46A292CB7AAF}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Tost.CollectionsExtensions", "src\Tosts.CollectionsExtensions\Tost.CollectionsExtensions.csproj", "{79005186-B7F6-42B8-BEF4-46A292CB7AAF}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

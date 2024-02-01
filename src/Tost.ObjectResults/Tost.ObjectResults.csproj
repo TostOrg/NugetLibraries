@@ -2,10 +2,9 @@
 
   <PropertyGroup>
     <Title>Tost.ObjectResults</Title>
-	<NoWarn>CS7035</NoWarn>
   </PropertyGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\..\Tosts.CollectionsExtensions\Tost.CollectionsExtensions.csproj" />
+    <ProjectReference Include="..\Tosts.CollectionsExtensions\Tost.CollectionsExtensions.csproj" />
   </ItemGroup>
 </Project>

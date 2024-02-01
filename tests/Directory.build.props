@@ -6,6 +6,11 @@
     </PropertyGroup>
 
 	<PropertyGroup>
+		<WarningLevel>9999</WarningLevel>
+		<AnalysisLevel>latest-all</AnalysisLevel>
+	</PropertyGroup>
+
+	<PropertyGroup>
 		<IsPackable>false</IsPackable>
 		<IsTestProject>true</IsTestProject>
 	</PropertyGroup>
