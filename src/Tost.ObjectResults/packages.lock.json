@@ -1,0 +1,16 @@
+{
+  "version": 1,
+  "dependencies": {
+    "net8.0": {
+      "Roslynator.Analyzers": {
+        "type": "Direct",
+        "requested": "[4.10.0, )",
+        "resolved": "4.10.0",
+        "contentHash": "lWq7Y2hoHZ7rmRutvG4okAatBVLQNR9BzvBp3WmQzaj9AEblEyujl6MIRwwi/x6NEurIdcAoGPn80v4JwGCXrg=="
+      },
+      "tost.collectionsextensions": {
+        "type": "Project"
+      }
+    }
+  }
+}

@@ -1,0 +1,44 @@
+name: Push new PR
+
+on:
+  workflow_dispatch:
+
+  pull_request:
+    types: [ "opened", "synchronize", "reopened" ]
+    branches: [ "main" ]
+
+jobs:
+  tag:
+    permissions:
+      contents: write
+    uses: TostOrg/DevOpsTemplates/.github/workflows/git-tag.yml@main
+    secrets: 
+      AUTH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+    with:
+      ref: ${{ github.sha }}
+      is_prerelease: true
+      prerelease_suffix: preview
+      
+  build:
+    needs: tag
+    permissions:
+      contents: read
+    uses: TostOrg/DevOpsTemplates/.github/workflows/dotnet-build.yml@main
+    secrets: 
+      AUTH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      NUGET_GITHUB_USERNAME: ${{ secrets.NUGET_GITHUB_USERNAME }}
+    with:
+      ref: ${{ github.sha }}
+      version: ${{ needs.tag.outputs.tag }}
+
+  nuget:
+    needs: [ "tag", "build" ]
+    permissions:
+      packages: write
+      contents: read
+    uses: TostOrg/DevOpsTemplates/.github/workflows/nuget-pack-push.yml@main
+    secrets: 
+      AUTH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      NUGET_GITHUB_USERNAME: ${{ secrets.NUGET_GITHUB_USERNAME }}
+    with:
+      version: ${{ needs.tag.outputs.tag }}

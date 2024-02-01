@@ -9,4 +9,10 @@ public class TestExample
     {
         true.Should().BeTrue();
     }
+
+    [Fact]
+    public void Test1()
+    {
+        true.Should().BeTrue();
+    }
 }

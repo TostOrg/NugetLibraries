@@ -2,4 +2,4 @@
 
 namespace Tost.ObjectResults.Types;
 
-internal record ReasonResultError(string? Message) : IError;
+internal sealed record ReasonResultError(string? Message) : IError;

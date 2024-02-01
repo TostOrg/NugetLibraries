@@ -1,35 +1,10 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
+	
+    <PropertyGroup>
+        <Title>Tost.ObjectResults</Title>
+    </PropertyGroup>
 
-  <PropertyGroup>
-    <TargetFramework>net8.0</TargetFramework>
-    <ImplicitUsings>enable</ImplicitUsings>
-    <Nullable>enable</Nullable>
-    <Title>Tost.ObjectResults</Title>
-    <IncludeSymbols>True</IncludeSymbols>
-    <SymbolPackageFormat>snupkg</SymbolPackageFormat>
-    <EnforceCodeStyleInBuild>True</EnforceCodeStyleInBuild>
-    <GeneratePackageOnBuild>False</GeneratePackageOnBuild>
-	<NoWarn>CS7035</NoWarn>
-	<Authors>Tost</Authors>
-  </PropertyGroup>
-
-  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
-    <WarningLevel>9999</WarningLevel>
-    <TreatWarningsAsErrors>False</TreatWarningsAsErrors>
-    <IsPublishable>True</IsPublishable>
-  </PropertyGroup>
-
-  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
-    <WarningLevel>9999</WarningLevel>
-    <TreatWarningsAsErrors>False</TreatWarningsAsErrors>
-    <IsPublishable>True</IsPublishable>
-  </PropertyGroup>
-
-  <ItemGroup>
-    <PackageReference Include="Roslynator.Analyzers" Version="4.10.0">
-      <PrivateAssets>all</PrivateAssets>
-      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
-    </PackageReference>
-  </ItemGroup>
-
+    <ItemGroup>
+        <ProjectReference Include="..\Tosts.CollectionsExtensions\Tost.CollectionsExtensions.csproj" />
+    </ItemGroup>
 </Project>
