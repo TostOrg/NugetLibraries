@@ -1,15 +1,5 @@
 <Project>
-    <PropertyGroup>
-		<TargetFramework>net8.0</TargetFramework>
-		<ImplicitUsings>enable</ImplicitUsings>
-		<Nullable>enable</Nullable>
-    </PropertyGroup>
-
-	<PropertyGroup>
-		<WarningLevel>9999</WarningLevel>
-		<AnalysisLevel>latest-all</AnalysisLevel>
-	</PropertyGroup>
-
+	
 	<PropertyGroup>
 		<IsPackable>false</IsPackable>
 		<IsTestProject>true</IsTestProject>
@@ -34,4 +24,5 @@
 	<ItemGroup>
 		<Using Include="Xunit" />
 	</ItemGroup>
+	
 </Project>

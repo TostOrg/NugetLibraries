@@ -1,4 +1,14 @@
 <Project>
+	<PropertyGroup>
+		<NoWarn>CS7035</NoWarn>
+	</PropertyGroup>
+	
+	<PropertyGroup>
+		<WarningLevel>9999</WarningLevel>
+		<AnalysisLevel>latest-all</AnalysisLevel>
+		<EnforceCodeStyleInBuild>True</EnforceCodeStyleInBuild>
+	</PropertyGroup>
+	
     <PropertyGroup>
       <RestorePackagesWithLockFile>true</RestorePackagesWithLockFile>
     </PropertyGroup>

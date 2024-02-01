@@ -1,13 +1,11 @@
 <Project>
-    <PropertyGroup>
+	<PropertyGroup>
 		<TargetFramework>net8.0</TargetFramework>
 		<ImplicitUsings>enable</ImplicitUsings>
 		<Nullable>enable</Nullable>
-		<NoWarn>CS7035</NoWarn>
-    </PropertyGroup>
-
+	</PropertyGroup>
+	
 	<PropertyGroup>
-		<EnforceCodeStyleInBuild>True</EnforceCodeStyleInBuild>
 		<GeneratePackageOnBuild>False</GeneratePackageOnBuild>
 		<SymbolPackageFormat>snupkg</SymbolPackageFormat>
 		<IncludeSymbols>True</IncludeSymbols>
@@ -16,12 +14,6 @@
 	<PropertyGroup>
 		<Authors>Tost</Authors>
 		<PackageProjectUrl>https://github.com/TostOrg/NugetLibraries</PackageProjectUrl>
-	</PropertyGroup>
-
-	<PropertyGroup>
-		<WarningLevel>9999</WarningLevel>
-		<IsPublishable>True</IsPublishable>
-		<AnalysisLevel>latest-all</AnalysisLevel>
 	</PropertyGroup>
 
 	<PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">

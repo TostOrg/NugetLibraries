@@ -1,10 +1,16 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
-  <PropertyGroup>
-    <Title>Tost.ObjectResults</Title>
-  </PropertyGroup>
+	<PropertyGroup>
+		<TargetFramework>net8.0</TargetFramework>
+		<ImplicitUsings>enable</ImplicitUsings>
+		<Nullable>enable</Nullable>
+	</PropertyGroup>
+	
+    <PropertyGroup>
+        <Title>Tost.ObjectResults</Title>
+    </PropertyGroup>
 
-  <ItemGroup>
-    <ProjectReference Include="..\Tosts.CollectionsExtensions\Tost.CollectionsExtensions.csproj" />
-  </ItemGroup>
+    <ItemGroup>
+        <ProjectReference Include="..\Tosts.CollectionsExtensions\Tost.CollectionsExtensions.csproj" />
+    </ItemGroup>
 </Project>
