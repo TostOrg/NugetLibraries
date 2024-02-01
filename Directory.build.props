@@ -1,4 +1,11 @@
 <Project>
+
+	<PropertyGroup>
+		<TargetFramework>net8.0</TargetFramework>
+		<ImplicitUsings>enable</ImplicitUsings>
+		<Nullable>enable</Nullable>
+	</PropertyGroup>
+	
 	<PropertyGroup>
 		<NoWarn>CS7035</NoWarn>
 	</PropertyGroup>
@@ -10,6 +17,8 @@
 	</PropertyGroup>
 	
     <PropertyGroup>
-      <RestorePackagesWithLockFile>true</RestorePackagesWithLockFile>
+        <RestorePackagesWithLockFile>true</RestorePackagesWithLockFile>
+		<DisableImplicitNuGetFallbackFolder>true</DisableImplicitNuGetFallbackFolder>
     </PropertyGroup>
+	
 </Project>
