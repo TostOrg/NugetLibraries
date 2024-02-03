@@ -1050,14 +1050,8 @@
           "xunit.extensibility.core": "[2.5.3]"
         }
       },
-      "tost.collectionsextensions": {
-        "type": "Project"
-      },
       "tost.objectresults": {
-        "type": "Project",
-        "dependencies": {
-          "Tost.CollectionsExtensions": "[1.0.0, )"
-        }
+        "type": "Project"
       }
     }
   }

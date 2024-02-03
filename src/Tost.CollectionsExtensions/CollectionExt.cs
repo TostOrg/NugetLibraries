@@ -62,4 +62,20 @@ public static class CollectionExt
 
         return default;
     }
+
+    public static void MutateFindAll<T>(this Collection<T> collection, Predicate<T> predicate)
+    {
+        ArgumentNullException.ThrowIfNull(collection);
+        ArgumentNullException.ThrowIfNull(predicate);
+
+        for (var i = 0; i < collection.Count; i++)
+        {
+            if (predicate(collection[i]))
+            {
+                continue;
+            }
+
+            collection.Remove(collection[i]);
+        }
+    }
 }

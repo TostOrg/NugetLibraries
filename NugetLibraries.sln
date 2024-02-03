@@ -32,7 +32,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "workflows", "workflows", "{
 		.github\workflows\pr-closed.yml = .github\workflows\pr-closed.yml
 	EndProjectSection
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Tost.CollectionsExtensions", "src\Tosts.CollectionsExtensions\Tost.CollectionsExtensions.csproj", "{79005186-B7F6-42B8-BEF4-46A292CB7AAF}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Tost.CollectionsExtensions", "src\Tost.CollectionsExtensions\Tost.CollectionsExtensions.csproj", "{79005186-B7F6-42B8-BEF4-46A292CB7AAF}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
