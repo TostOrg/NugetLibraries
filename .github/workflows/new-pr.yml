@@ -42,14 +42,3 @@ jobs:
       NUGET_GITHUB_USERNAME: ${{ secrets.NUGET_GITHUB_USERNAME }}
     with:
       version: ${{ needs.tag.outputs.tag }}
-
-  delete_prerelease_tags:
-    needs: [ "nuget" ]
-    permissions:
-      contents: write
-    uses: TostOrg/DevOpsTemplates/.github/workflows/delete-prerelease-git-tags.yml@main
-    with:
-      ref: ${{ github.sha }}
-      branch_name: ${{ github.event.pull_request.head.ref }}
-    secrets: 
-      AUTH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
