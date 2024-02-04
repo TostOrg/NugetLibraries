@@ -1,6 +1,5 @@
-﻿using System;
+﻿using System.Collections.Generic;
 using System.Collections.ObjectModel;
-using System.Runtime.InteropServices;
 
 namespace Tost.CollectionsExtensions;
 
@@ -11,9 +10,8 @@ public static class CollectionExt
         ArgumentNullException.ThrowIfNull(collection);
         ArgumentNullException.ThrowIfNull(predicate);
 
-        var list = new List<T>(collection.Count);
-
         var counter = 0;
+        var newList = new List<T>(collection.Count);
         for (var i = 0; i < collection.Count; i++)
         {
             if (predicate(collection[i]) is false)
@@ -21,13 +19,11 @@ public static class CollectionExt
                 continue;
             }
 
-            list.Add(collection[i]);
+            newList.Add(collection[i]);
             counter++;
         }
 
-        CollectionsMarshal.SetCount(list, counter);
-
-        return new Collection<T>(list);
+        return new Collection<T>(newList);
     }
 
     public static Collection<TOutput> ConvertAll<TInput, TOutput>(this Collection<TInput> collection, Converter<TInput, TOutput> converter)
@@ -61,21 +57,5 @@ public static class CollectionExt
         }
 
         return default;
-    }
-
-    public static void MutateFindAll<T>(this Collection<T> collection, Predicate<T> predicate)
-    {
-        ArgumentNullException.ThrowIfNull(collection);
-        ArgumentNullException.ThrowIfNull(predicate);
-
-        for (var i = 0; i < collection.Count; i++)
-        {
-            if (predicate(collection[i]))
-            {
-                continue;
-            }
-
-            collection.Remove(collection[i]);
-        }
     }
 }

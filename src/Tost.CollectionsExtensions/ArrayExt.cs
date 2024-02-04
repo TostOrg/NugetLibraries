@@ -7,9 +7,8 @@ public static class ArrayExt
         ArgumentNullException.ThrowIfNull(array);
         ArgumentNullException.ThrowIfNull(predicate);
 
-        var newArray = new T[array.Length];
-
         var counter = 0;
+        var newArray = new T[array.Length];
         for (var i = 0; i < array.Length; i++)
         {
             if (predicate(array[i]) is false)
@@ -17,13 +16,11 @@ public static class ArrayExt
                 continue;
             }
 
-            newArray[i] = array[i];
+            newArray[counter] = array[i];
             counter++;
         }
 
-        Array.Clear(newArray, counter, newArray.Length - counter);
-
-        return newArray;
+        return newArray.AsSpan(0, counter).ToArray();
     }
 
     public static TOutput[] ConvertAll<TInput, TOutput>(this TInput[] array, Converter<TInput, TOutput> converter)

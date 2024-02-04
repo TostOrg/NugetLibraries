@@ -3,8 +3,8 @@
     <PropertyGroup>
         <Title>Tost.ObjectResults</Title>
     </PropertyGroup>
-
+	
     <ItemGroup>
-        <ProjectReference Include="..\Tosts.CollectionsExtensions\Tost.CollectionsExtensions.csproj" />
+      <ProjectReference Include="..\Tost.CollectionsExtensions\Tost.CollectionsExtensions.csproj" />
     </ItemGroup>
 </Project>
