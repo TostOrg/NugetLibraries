@@ -22,13 +22,13 @@ public class Result : IFailedResult, ISucceededResult
         return new Result();
     }
 
-    public static ISucceededResult<T> Ok<T>(T value)
+    public static Result<T> Ok<T>(T value)
     {
         var result = new Result<T>();
         return result.WithValue(value);
     }
 
-    public static IFailedResult Fail()
+    public static Result Fail()
     {
         return new Result();
     }
@@ -55,7 +55,7 @@ public class Result<T> : Result, ISucceededResult<T>
         }
     }
 
-    public ISucceededResult<T> WithValue(T value)
+    public Result<T> WithValue(T value)
     {
         Value = value;
         return this;

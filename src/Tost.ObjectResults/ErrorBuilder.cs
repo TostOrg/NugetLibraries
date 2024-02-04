@@ -8,26 +8,28 @@ namespace Tost.ObjectResults;
 
 public static class ErrorBuilder
 {
-    public static IFailedResult WithHttpStatusCode(this IFailedResult value, System.Net.HttpStatusCode statusCode)
+    public static Result WithHttpStatusCode(this Result result, System.Net.HttpStatusCode statusCode)
     {
+        ArgumentNullException.ThrowIfNull(result);
+
         if (!Constants.StatusCodeDefaults.TryGetValue((int)statusCode, out var statusCodeConstant))
         {
             _ = Constants.StatusCodeDefaults.TryGetValue((int)System.Net.HttpStatusCode.InternalServerError, out statusCodeConstant);
         }
 
-        value.WithError(new TitleResultError(statusCodeConstant.Title));
-        value.WithError(new TypeResultError(statusCodeConstant.Type));
-        value.WithError(new HttpStatusCodeResultError(statusCode));
+        result.WithError(new TitleResultError(statusCodeConstant.Title));
+        result.WithError(new TypeResultError(statusCodeConstant.Type));
+        result.WithError(new HttpStatusCodeResultError(statusCode));
 
-        return value;
+        return result;
     }
 
-    public static IFailedResult WithReason(this IFailedResult value, string reason)
+    public static Result WithReason(this Result result, string reason)
     {
-        return value.WithError(new ReasonResultError(reason));
+        return result.WithError(new ReasonResultError(reason));
     }
 
-    public static IFailedResult WithError(this IFailedResult result, IError error)
+    public static Result WithError(this Result result, IError error)
     {
         ArgumentNullException.ThrowIfNull(result);
 
