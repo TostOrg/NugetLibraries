@@ -15,10 +15,4 @@ public class TestExample
     {
         true.Should().BeTrue();
     }
-
-    [Fact]
-    public void Test2()
-    {
-        true.Should().BeTrue();
-    }
 }
