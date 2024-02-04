@@ -34,6 +34,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "workflows", "workflows", "{
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Tost.CollectionsExtensions", "src\Tost.CollectionsExtensions\Tost.CollectionsExtensions.csproj", "{79005186-B7F6-42B8-BEF4-46A292CB7AAF}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Tost.CollectionsExtensions.Tests", "tests\Tost.CollectionsExtensions.Tests\Tost.CollectionsExtensions.Tests.csproj", "{432093BE-99F4-4C84-8B66-64248E3BAC34}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -52,6 +54,10 @@ Global
 		{79005186-B7F6-42B8-BEF4-46A292CB7AAF}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{79005186-B7F6-42B8-BEF4-46A292CB7AAF}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{79005186-B7F6-42B8-BEF4-46A292CB7AAF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{432093BE-99F4-4C84-8B66-64248E3BAC34}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{432093BE-99F4-4C84-8B66-64248E3BAC34}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{432093BE-99F4-4C84-8B66-64248E3BAC34}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{432093BE-99F4-4C84-8B66-64248E3BAC34}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -61,6 +67,7 @@ Global
 		{50921B63-643B-475F-9DE6-66170DE93805} = {69A420E4-98C4-4559-B0F2-F37070978380}
 		{AD9FE51D-DFC8-4C6C-962B-4A19A26BB721} = {73D07BAC-1D48-409C-9325-CBC4B224BEC3}
 		{79005186-B7F6-42B8-BEF4-46A292CB7AAF} = {69A420E4-98C4-4559-B0F2-F37070978380}
+		{432093BE-99F4-4C84-8B66-64248E3BAC34} = {BB2908BA-17FA-45D3-8950-D1768038F3E2}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {81255195-DFE9-4521-94D3-4831D5593987}

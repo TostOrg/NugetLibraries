@@ -35,7 +35,7 @@ public static class CollectionExt
 
         for (int i = 0; i < collection.Count; i++)
         {
-            list[i] = converter(collection[i]);
+            list.Add(converter(collection[i]));
         }
 
         return new Collection<TOutput>(list);
