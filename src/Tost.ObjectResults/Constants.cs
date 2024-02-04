@@ -1,10 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿namespace Tost.ObjectResults;
 
-namespace Tost.ObjectResults;
 internal static class Constants
 {
     public static readonly Dictionary<int, (string Type, string Title)> StatusCodeDefaults = new()

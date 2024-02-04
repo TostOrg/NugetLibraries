@@ -45,14 +45,12 @@ public static class ErrorBuilder
         var type = (result.Errors.Find(p => p is TypeResultError) as TypeResultError)?.Message ?? $"https://httpstatuses.com/{statusCode}";
         var messages = result.Reasons.FindAll(p => p.Message is not null).ConvertAll(p => p.Message);
 
-        var problemDetails = new ProblemDetails
+        return new ProblemDetails
         {
             Detail = JsonSerializer.Serialize(messages),
             Status = statusCode,
             Title = title,
             Type = type
         };
-
-        return problemDetails;
     }
 }
