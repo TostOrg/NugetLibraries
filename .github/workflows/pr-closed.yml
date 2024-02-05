@@ -29,20 +29,41 @@ jobs:
       ref: ${{ github.event.pull_request.merge_commit_sha }}
       version: ${{ needs.tag.outputs.tag }}
 
-  nuget:
+  nuget-pack:
     needs: [ "tag", "build" ]
     permissions:
-      packages: write
       contents: read
-    uses: TostOrg/DevOpsTemplates/.github/workflows/nuget-pack-push.yml@main
+    uses: TostOrg/DevOpsTemplates/.github/workflows/nuget-pack.yml@main
     secrets: 
-      AUTH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      AUTH_GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       NUGET_GITHUB_USERNAME: ${{ secrets.NUGET_GITHUB_USERNAME }}
     with:
       version: ${{ needs.tag.outputs.tag }}
 
+  nuget-push-github:
+    needs: [ "nuget-pack" ]
+    permissions:
+      packages: write
+    uses: TostOrg/DevOpsTemplates/.github/workflows/nuget-push.yml@main
+    secrets: 
+      AUTH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      AUTH_GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      NUGET_GITHUB_USERNAME: ${{ secrets.NUGET_GITHUB_USERNAME }}
+
+  nuget-push-nuget-org:
+    needs: [ "nuget-pack" ]
+    permissions:
+      packages: write
+    uses: TostOrg/DevOpsTemplates/.github/workflows/nuget-push.yml@main
+    secrets: 
+      AUTH_TOKEN: ${{ secrets.NUGET_ORG_TOKEN }}
+      AUTH_GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      NUGET_GITHUB_USERNAME: ${{ secrets.NUGET_GITHUB_USERNAME }}
+    with:
+      nuget_server: "nuget.org"
+
   delete_prerelease_tags:
-    needs: [ "nuget" ]
+    needs: [ "nuget-pack" ]
     permissions:
       contents: write
     uses: TostOrg/DevOpsTemplates/.github/workflows/delete-prerelease-git-tags.yml@main
