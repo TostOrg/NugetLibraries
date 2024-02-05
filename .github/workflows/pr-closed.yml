@@ -47,7 +47,6 @@ jobs:
     uses: TostOrg/DevOpsTemplates/.github/workflows/nuget-push.yml@main
     secrets: 
       AUTH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-      NUGET_USERNAME: ${{ secrets.NUGET_GITHUB_USERNAME }}
 
   nuget-push-nuget-org:
     needs: [ "nuget-pack" ]
@@ -56,7 +55,6 @@ jobs:
     uses: TostOrg/DevOpsTemplates/.github/workflows/nuget-push.yml@main
     secrets: 
       AUTH_TOKEN: ${{ secrets.NUGET_ORG_TOKEN }}
-      NUGET_USERNAME: ${{ secrets.NUGET_ORG_USERNAME }}
     with:
       nuget_server: "nuget.org"
 
