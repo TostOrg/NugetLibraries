@@ -48,8 +48,6 @@ jobs:
     secrets: 
       AUTH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       NUGET_USERNAME: ${{ secrets.NUGET_GITHUB_USERNAME }}
-    with:
-      version: ${{ needs.tag.outputs.tag }}
 
   nuget-push-nuget-org:
     needs: [ "nuget-pack" ]
@@ -60,11 +58,10 @@ jobs:
       AUTH_TOKEN: ${{ secrets.NUGET_ORG_TOKEN }}
       NUGET_USERNAME: ${{ secrets.NUGET_ORG_USERNAME }}
     with:
-      version: ${{ needs.tag.outputs.tag }}
       nuget_server: "nuget.org"
 
   delete_prerelease_tags:
-    needs: [ "nuget" ]
+    needs: [ "nuget-pack" ]
     permissions:
       contents: write
     uses: TostOrg/DevOpsTemplates/.github/workflows/delete-prerelease-git-tags.yml@main

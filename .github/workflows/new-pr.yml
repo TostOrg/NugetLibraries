@@ -50,5 +50,3 @@ jobs:
     secrets: 
       AUTH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       NUGET_USERNAME: ${{ secrets.NUGET_GITHUB_USERNAME }}
-    with:
-      version: ${{ needs.tag.outputs.tag }}
