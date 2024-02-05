@@ -2,7 +2,7 @@
 
 public static class ListExt
 {
-    public static List<T> FindAllPref<T>(this List<T> list, Predicate<T> predicate)
+    public static List<T> FindAllPerf<T>(this List<T> list, Predicate<T> predicate)
     {
         ArgumentNullException.ThrowIfNull(list);
         ArgumentNullException.ThrowIfNull(predicate);

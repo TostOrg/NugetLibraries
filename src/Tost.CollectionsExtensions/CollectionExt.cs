@@ -58,4 +58,9 @@ public static class CollectionExt
 
         return default;
     }
+
+    public static bool Exists<T>(this Collection<T> collection, Predicate<T> predicate)
+    {
+        return collection.Find(predicate) is not null;
+    }
 }
