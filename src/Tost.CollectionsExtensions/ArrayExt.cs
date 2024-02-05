@@ -32,4 +32,9 @@ public static class ArrayExt
     {
         return Array.Find(array, predicate);
     }
+
+    public static bool Exists<T>(this T[] array, Predicate<T> predicate)
+    {
+        return Array.Exists(array, predicate);
+    }
 }

@@ -25,7 +25,7 @@ public class ListExtTests
     {
         var expected = list.FindAll(match: p => !p.Equals(default));
 
-        var result = list.FindAllPref(predicate: p => !p.Equals(default));
+        var result = list.FindAllPerf(predicate: p => !p.Equals(default));
 
         result.Should().BeEquivalentTo(expected);
     }
@@ -36,7 +36,7 @@ public class ListExtTests
     {
         var expected = list.FindAll(match: p => p != null);
 
-        var result = list.FindAllPref(predicate: p => p != null);
+        var result = list.FindAllPerf(predicate: p => p != null);
 
         result.Should().BeEquivalentTo(expected);
     }
