@@ -5,7 +5,7 @@ namespace Tost.ObjectResults;
 /// <summary>
 /// A machine-readable format for specifying errors in HTTP API responses based on <see href="https://tools.ietf.org/html/rfc7807"/>.
 /// </summary>
-public class ProblemDetails
+public record ProblemDetails
 {
     /// <summary>
     /// A URI reference [RFC3986] that identifies the problem type. This specification encourages that, when
@@ -59,5 +59,5 @@ public class ProblemDetails
     /// In particular, complex types or collection types may not round-trip to the original type when using the built-in JSON or XML formatters.
     /// </remarks>
     [JsonExtensionData]
-    public IDictionary<string, object?> Extensions { get; } = new Dictionary<string, object?>(StringComparer.Ordinal);
+    public IDictionary<string, object?> Extensions { get; } = new Dictionary<string, object?>(StringComparer.OrdinalIgnoreCase);
 }

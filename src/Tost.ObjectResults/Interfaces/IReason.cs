@@ -1,6 +1,5 @@
 ﻿namespace Tost.ObjectResults.Interfaces;
 
-public interface IReason
-{
-    public string? Message { get; init; }
-}
+#pragma warning disable CA1040
+public interface IReason;
+#pragma warning restore CA1040

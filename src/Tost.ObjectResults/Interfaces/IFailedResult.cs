@@ -2,8 +2,7 @@
 
 namespace Tost.ObjectResults.Interfaces;
 
-public interface IFailedResult
+public interface IFailedResult : IResult
 {
-    public Collection<IReason> Reasons { get; }
-    public Collection<IError> Errors { get; }
+    public ReadOnlyCollection<IError> Errors { get; }
 }
