@@ -26,19 +26,17 @@ public class SuccessResult : Result, ISucceededResult
 
 public class SuccessResult<T> : SuccessResult, ISucceededResult<T>
 {
-    internal SuccessResult()
-    {
-    }
-
     internal SuccessResult(T value)
     {
         Reasons.Add(new ValueResult<T>(value));
+        Value = (Reasons.Find(p => p is ValueResult<int>) as ValueResult<T>)!.Value;
     }
 
     internal SuccessResult(T value, Collection<IReason> reasons) : base(reasons)
     {
         Reasons.Add(new ValueResult<T>(value));
+        Value = (Reasons.Find(p => p is ValueResult<int>) as ValueResult<T>)!.Value;
     }
 
-    public T Value => (Reasons.Find(p => p is ValueResult<int>) as ValueResult<T>)!.Value;
+    public T Value { get; }
 }
