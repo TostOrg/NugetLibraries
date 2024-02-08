@@ -43,15 +43,15 @@ public static class FailureResultBuilder
 
         var detail = (result.Errors.Find(p => p is ReasonResultError) as ReasonResultError)?.Message;
         var statusCode = (result.Errors.Find(p => p is HttpStatusCodeResultError) as HttpStatusCodeResultError)?.StatusCode;
-        var title = (result.Errors.Find(p => p is TitleResultError) as TitleResultError)?.Message;
+        var title = (result.Errors.Find(p => p is TitleResultError) as TitleResultError)?.Message ?? "Unknown";
         var type = (result.Errors.Find(p => p is TypeResultError) as TypeResultError)?.Message;
         var messages = result.Reasons.FindAll(p => p is not IPredefinedReason);
 
         var problemDetail = new ProblemDetails
         {
-            Detail = detail ?? "Unknown",
+            Detail = detail ?? title,
             Status = (int?)statusCode ?? (int)System.Net.HttpStatusCode.BadRequest,
-            Title = title ?? "Unknown",
+            Title = title,
         };
 
         problemDetail.Type = type ?? $"https://httpstatuses.com/{problemDetail.Status}";

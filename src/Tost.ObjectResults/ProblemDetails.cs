@@ -1,5 +1,7 @@
 ﻿using System.Text.Json.Serialization;
 
+using Tost.ObjectResults.Interfaces;
+
 namespace Tost.ObjectResults;
 
 /// <summary>
@@ -7,6 +9,10 @@ namespace Tost.ObjectResults;
 /// </summary>
 public record ProblemDetails
 {
+    internal ProblemDetails()
+    {
+    }
+
     /// <summary>
     /// A URI reference [RFC3986] that identifies the problem type. This specification encourages that, when
     /// dereferenced, it provide human-readable documentation for the problem type
@@ -59,5 +65,5 @@ public record ProblemDetails
     /// In particular, complex types or collection types may not round-trip to the original type when using the built-in JSON or XML formatters.
     /// </remarks>
     [JsonExtensionData]
-    public IDictionary<string, object?> Extensions { get; } = new Dictionary<string, object?>(StringComparer.OrdinalIgnoreCase);
+    public IDictionary<string, IReason?> Extensions { get; } = new Dictionary<string, IReason?>(StringComparer.OrdinalIgnoreCase);
 }

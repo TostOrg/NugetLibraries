@@ -24,7 +24,7 @@ public class Result : IResult
 
     public Collection<IReason> Reasons { get; }
 
-    public static Result Ok()
+    public static SuccessResult Ok()
     {
         return new SuccessResult();
     }
@@ -34,7 +34,7 @@ public class Result : IResult
         return new SuccessResult<T>(value);
     }
 
-    public static Result Fail()
+    public static FailureResult Fail()
     {
         return new FailureResult();
     }
