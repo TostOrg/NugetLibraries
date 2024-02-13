@@ -13,4 +13,24 @@ public static class SuccessResultBuilder
 
         return result;
     }
+
+    public static SuccessResult<T> WithStatusCode<T>(this SuccessResult<T> result, System.Net.HttpStatusCode statusCode)
+    {
+        ArgumentNullException.ThrowIfNull(result);
+        ArgumentNullException.ThrowIfNull(statusCode);
+
+        result.Reasons.Add(new StatusCodeResult(statusCode));
+
+        return result;
+    }
+
+    public static SuccessResult WithStatusCode(this SuccessResult result, System.Net.HttpStatusCode statusCode)
+    {
+        ArgumentNullException.ThrowIfNull(result);
+        ArgumentNullException.ThrowIfNull(statusCode);
+
+        result.Reasons.Add(new StatusCodeResult(statusCode));
+
+        return result;
+    }
 }
