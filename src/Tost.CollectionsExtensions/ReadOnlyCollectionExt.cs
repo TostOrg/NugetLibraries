@@ -2,9 +2,9 @@
 
 namespace Tost.CollectionsExtensions;
 
-public static class CollectionExt
+public static class ReadOnlyCollectionExt
 {
-    public static Collection<T> FindAll<T>(this Collection<T> collection, Predicate<T> predicate)
+    public static ReadOnlyCollection<T> FindAll<T>(this ReadOnlyCollection<T> collection, Predicate<T> predicate)
     {
         ArgumentNullException.ThrowIfNull(collection);
         ArgumentNullException.ThrowIfNull(predicate);
@@ -22,10 +22,10 @@ public static class CollectionExt
             counter++;
         }
 
-        return new Collection<T>(newList);
+        return new ReadOnlyCollection<T>(newList);
     }
 
-    public static Collection<TOutput> ConvertAll<TInput, TOutput>(this Collection<TInput> collection, Converter<TInput, TOutput> converter)
+    public static ReadOnlyCollection<TOutput> ConvertAll<TInput, TOutput>(this ReadOnlyCollection<TInput> collection, Converter<TInput, TOutput> converter)
     {
         ArgumentNullException.ThrowIfNull(collection);
         ArgumentNullException.ThrowIfNull(converter);
@@ -37,10 +37,10 @@ public static class CollectionExt
             list.Add(converter(collection[i]));
         }
 
-        return new Collection<TOutput>(list);
+        return new ReadOnlyCollection<TOutput>(list);
     }
 
-    public static T? Find<T>(this Collection<T> collection, Predicate<T> predicate)
+    public static T? Find<T>(this ReadOnlyCollection<T> collection, Predicate<T> predicate)
     {
         ArgumentNullException.ThrowIfNull(collection);
         ArgumentNullException.ThrowIfNull(predicate);
@@ -58,7 +58,7 @@ public static class CollectionExt
         return default;
     }
 
-    public static bool Exists<T>(this Collection<T> collection, Predicate<T> predicate)
+    public static bool Exists<T>(this ReadOnlyCollection<T> collection, Predicate<T> predicate)
     {
         return collection.Find(predicate) is not null;
     }

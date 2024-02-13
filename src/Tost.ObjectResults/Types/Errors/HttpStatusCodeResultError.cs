@@ -1,11 +1,10 @@
 ﻿using System.Net;
 using System.Text.Json.Serialization;
-
 using Tost.ObjectResults.Interfaces;
 
-namespace Tost.ObjectResults.Types;
+namespace Tost.ObjectResults.Types.Errors;
 
-internal sealed record HttpStatusCodeResultError(HttpStatusCode StatusCode) : IError
+internal sealed record HttpStatusCodeResultError(HttpStatusCode StatusCode) : IPredefinedReason, IError
 {
     [JsonIgnore]
     public string? Message { get; init; }

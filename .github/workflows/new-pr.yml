@@ -8,6 +8,13 @@ on:
     branches: [ "main" ]
 
 jobs:
+  codeql:
+    permissions:
+      security-events: write
+    uses: TostOrg/DevOpsTemplates/.github/workflows/codeql.yml@main
+    with:
+      language: csharp
+
   tag:
     permissions:
       contents: write
