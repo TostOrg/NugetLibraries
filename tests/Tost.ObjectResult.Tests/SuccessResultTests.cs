@@ -24,4 +24,12 @@ public class SuccessResultTests
         okResult.Should().BeOfType<SuccessResult>();
         typedOkResult.Should().BeOfType<SuccessResult<int>>().Which.Value.Should().Be(value);
     }
+
+    [Fact]
+    public void ResultOkShouldHaveSuccessTrue()
+    {
+        var okResult = Result.Ok();
+
+        okResult.IsSuccess.Should().BeTrue();
+    }
 }
