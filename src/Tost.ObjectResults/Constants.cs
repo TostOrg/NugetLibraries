@@ -1,6 +1,6 @@
 ﻿namespace Tost.ObjectResults;
 
-internal static class Constants
+public static class Constants
 {
     public static readonly Dictionary<int, (string Type, string Title)> StatusCodeDefaults = new()
     {

@@ -8,12 +8,12 @@ namespace Tost.ObjectResults.ResultObjects;
 
 public class SuccessResult : ISucceededResult
 {
-    internal SuccessResult()
+    public SuccessResult()
     {
         Reasons = [];
     }
 
-    internal SuccessResult(Collection<IReason> reasons)
+    public SuccessResult(Collection<IReason> reasons)
     {
         Reasons = reasons;
     }
@@ -33,13 +33,13 @@ public class SuccessResult : ISucceededResult
 
 public class SuccessResult<T> : ISucceededResult<T>
 {
-    internal SuccessResult(T value)
+    public SuccessResult(T value)
     {
         Reasons = [new ValueResult<T>(value)];
         Value = (Reasons.Find(p => p is ValueResult<int>) as ValueResult<T>)!.Value;
     }
 
-    internal SuccessResult(T value, Collection<IReason> reasons)
+    public SuccessResult(T value, Collection<IReason> reasons)
     {
         Reasons = reasons;
         reasons.Add(new ValueResult<T>(value));

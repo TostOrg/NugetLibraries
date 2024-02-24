@@ -6,7 +6,7 @@ namespace Tost.ObjectResults.ResultObjects;
 
 public class FailureResult : IFailedResult
 {
-    internal FailureResult()
+    public FailureResult()
     {
         Reasons = [];
     }

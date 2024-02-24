@@ -2,4 +2,4 @@
 
 namespace Tost.ObjectResults.Types.Success;
 
-internal sealed record ValueResult<T>(T Value) : IPredefinedReason, ISuccess;
+public sealed record ValueResult<T>(T Value) : IPredefinedReason, ISuccess;

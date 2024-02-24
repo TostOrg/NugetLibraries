@@ -62,4 +62,20 @@ public static class CollectionExt
     {
         return collection.Find(predicate) is not null;
     }
+
+    public static bool TrueForAll<T>(this Collection<T> collection, Predicate<T> predicate)
+    {
+        ArgumentNullException.ThrowIfNull(collection);
+        ArgumentNullException.ThrowIfNull(predicate);
+
+        for (int i = 0; i < collection.Count; i++)
+        {
+            if (!predicate(collection[i]))
+            {
+                return false;
+            }
+        }
+
+        return true;
+    }
 }

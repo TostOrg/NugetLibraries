@@ -2,4 +2,4 @@
 
 namespace Tost.ObjectResults.Types.Errors;
 
-internal sealed record TypeResultError(string? Message) : IPredefinedReason, IError;
+public sealed record TypeResultError(string? Message) : IPredefinedReason, IError;

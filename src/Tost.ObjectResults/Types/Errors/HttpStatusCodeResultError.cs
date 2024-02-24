@@ -4,7 +4,7 @@ using Tost.ObjectResults.Interfaces;
 
 namespace Tost.ObjectResults.Types.Errors;
 
-internal sealed record HttpStatusCodeResultError(HttpStatusCode StatusCode) : IPredefinedReason, IError
+public sealed record HttpStatusCodeResultError(HttpStatusCode StatusCode) : IPredefinedReason, IError
 {
     [JsonIgnore]
     public string? Message { get; init; }
