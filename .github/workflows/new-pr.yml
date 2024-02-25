@@ -22,7 +22,7 @@ jobs:
     secrets: 
       AUTH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
     with:
-      ref: ${{ github.sha }}
+      ref: ${{ github.ref_name }}
       is_prerelease: true
       prerelease_suffix: ${{ github.event.pull_request.head.ref }}
       
@@ -35,7 +35,7 @@ jobs:
       AUTH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       NUGET_GITHUB_USERNAME: ${{ secrets.NUGET_GITHUB_USERNAME }}
     with:
-      ref: ${{ github.sha }}
+      ref: ${{ github.ref_name }}
       version: ${{ needs.tag.outputs.tag }}
 
   nuget-pack:
