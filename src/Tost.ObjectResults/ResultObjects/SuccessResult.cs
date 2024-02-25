@@ -41,6 +41,8 @@ public class SuccessResult<T> : ISucceededResult<T>
 
     public SuccessResult(T value, Collection<IReason> reasons)
     {
+        ArgumentNullException.ThrowIfNull(reasons);
+
         Reasons = reasons;
         reasons.Add(new ValueResult<T>(value));
 
