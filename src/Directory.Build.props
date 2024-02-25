@@ -6,7 +6,7 @@
         <GeneratePackageOnBuild>False</GeneratePackageOnBuild>
         <SymbolPackageFormat>snupkg</SymbolPackageFormat>
         <IncludeSymbols>True</IncludeSymbols>
-		<ContinuousIntegrationBuild>true</ContinuousIntegrationBuild>
+	<ContinuousIntegrationBuild>true</ContinuousIntegrationBuild>
     </PropertyGroup>
 
     <PropertyGroup>

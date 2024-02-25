@@ -9,10 +9,6 @@ namespace Tost.ObjectResults;
 /// </summary>
 public record ProblemDetails
 {
-    internal ProblemDetails()
-    {
-    }
-
     /// <summary>
     /// A URI reference [RFC3986] that identifies the problem type. This specification encourages that, when
     /// dereferenced, it provide human-readable documentation for the problem type

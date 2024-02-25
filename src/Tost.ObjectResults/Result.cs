@@ -8,12 +8,12 @@ namespace Tost.ObjectResults;
 
 public class Result : IResult
 {
-    internal Result()
+    public Result()
     {
         Reasons = [];
     }
 
-    internal Result(Collection<IReason> reasons)
+    public Result(Collection<IReason> reasons)
     {
         Reasons = reasons;
     }

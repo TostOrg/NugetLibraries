@@ -37,4 +37,9 @@ public static class ArrayExt
     {
         return Array.Exists(array, predicate);
     }
+
+    public static bool TrueForAll<T>(this T[] array, Predicate<T> predicate)
+    {
+        return Array.TrueForAll(array, predicate);
+    }
 }
