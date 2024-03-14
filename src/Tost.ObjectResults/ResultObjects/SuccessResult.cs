@@ -36,7 +36,7 @@ public class SuccessResult<T> : ISucceededResult<T>
     public SuccessResult(T value)
     {
         Reasons = [new ValueResult<T>(value)];
-        Value = (Reasons.Find(p => p is ValueResult<int>) as ValueResult<T>)!.Value;
+        Value = (Reasons.Find(p => p is ValueResult<T>) as ValueResult<T>)!.Value;
     }
 
     public SuccessResult(T value, Collection<IReason> reasons)
@@ -46,7 +46,7 @@ public class SuccessResult<T> : ISucceededResult<T>
         Reasons = reasons;
         reasons.Add(new ValueResult<T>(value));
 
-        Value = (Reasons.Find(p => p is ValueResult<int>) as ValueResult<T>)!.Value;
+        Value = (Reasons.Find(p => p is ValueResult<T>) as ValueResult<T>)!.Value;
     }
 
     public ReadOnlyCollection<ISuccess> Successes => Reasons.FindAll(p => p is ISuccess).ConvertAll(p => (p as ISuccess)!).AsReadOnly();
